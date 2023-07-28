@@ -8,11 +8,9 @@ const [filtering, setFiltering] = useState('')
 useEffect(() => {
   fetch('https://pokeapi.co/api/v2/pokemon')
   .then((response) => {
-    // console.log(response.status);
     return response.json()
   })
   .then((data) => {
-    // console.log(data);
     setResult(data.results)
   })
   .catch((error) => {
@@ -25,7 +23,7 @@ useEffect(() => {
   }
 
   const pokemonUrl = result.map((pokeUrl) =>{
-    return pokeUrl.url.split('/')
+    return pokeUrl.url.split('/')[6]
   })
 
   console.log(pokemonUrl);
@@ -34,8 +32,6 @@ useEffect(() => {
   const filterPokemon = result.filter((dataPokemon)=> {
     return dataPokemon.name.includes(filtering)
   })
-
-  // console.log(result);
 
   
   return (
@@ -46,15 +42,7 @@ useEffect(() => {
       <br />
       hasil : {filterPokemon.map((mapPokemon) => {
         return <div key={mapPokemon.name}>{mapPokemon.name} . {mapPokemon.url.split('/')[6]}</div>
-
       })} 
-
- 
-
-
-      {/* {result.map((dataPokemon, index) => {
-          return <div key={dataPokemon.name}>{index+1}. {dataPokemon.name}</div>     
-      })} */}
     </>
   )
 }
