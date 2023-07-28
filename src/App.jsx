@@ -1,10 +1,9 @@
 import Pokemon from "./components/pokemonPage/Pokemon";
 
-
 function App() {
   return (
     <div className="App">
-      <Pokemon/>
+      <Pokemon />
     </div>
   );
 }
