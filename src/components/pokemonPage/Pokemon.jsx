@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import './style.css'
 
 const Pokemon = () => {
   const [result, setResult] = useState([]);
@@ -33,8 +35,8 @@ const Pokemon = () => {
       hasil :{" "}
       {filterPokemon.map((mapPokemon) => {
         return (
-          <div key={mapPokemon.name}>
-            {mapPokemon.name} . {mapPokemon.url.split("/")[6]}
+          <div key={mapPokemon.name} >
+            {mapPokemon.name} . <Link to={`/details/${mapPokemon.url.split('/')[6]}`}>{mapPokemon.url.split("/")[6]}</Link>
           </div>
         );
       })}
