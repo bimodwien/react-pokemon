@@ -1,29 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import './style.css'
+import { useFetch } from "../../helper/hooks/index";
+import "./style.css";
 
 const Pokemon = () => {
-  const [result, setResult] = useState([]);
   const [filtering, setFiltering] = useState("");
 
-  useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setResult(data.results);
-      })
-      .catch((error) => {
-        console.log("ini ada error");
-      });
-  }, []);
+  const dataFetchPokemon = useFetch({
+    url: `https://pokeapi.co/api/v2/pokemon`,
+    defaultData: [],
+  });
 
   function handleFilter(params) {
     setFiltering(params.target.value);
   }
+  console.log("ini data fetchpokemon", dataFetchPokemon);
 
-  const filterPokemon = result.filter((dataPokemon) => {
+  const filterPokemon = dataFetchPokemon?.filter((dataPokemon) => {
     return dataPokemon.name.includes(filtering);
   });
 
@@ -35,8 +28,11 @@ const Pokemon = () => {
       hasil :{" "}
       {filterPokemon.map((mapPokemon) => {
         return (
-          <div key={mapPokemon.name} >
-            {mapPokemon.name} . <Link to={`/details/${mapPokemon.url.split('/')[6]}`}>{mapPokemon.url.split("/")[6]}</Link>
+          <div key={mapPokemon.name}>
+            {mapPokemon.name} .{" "}
+            <Link to={`/details/${mapPokemon.url.split("/")[6]}`}>
+              {mapPokemon.url.split("/")[6]}
+            </Link>
           </div>
         );
       })}

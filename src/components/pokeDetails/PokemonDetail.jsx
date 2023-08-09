@@ -1,36 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
+import { useFetchDetail } from "../../helper/hooks";
 
 const PokemonDetail = () => {
   const parameter = useParams();
-  // console.log(parameter);
 
-  const [dataDetail, setDataDetail] = useState({});
-
-  useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${parameter.pokemonId}/`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setDataDetail(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [parameter.pokemonId]);
-
-  console.log(dataDetail);
+  const dataDetailPokemon = useFetchDetail({
+    url: `https://pokeapi.co/api/v2/pokemon/${parameter.pokemonId}/`,
+    defaultData: {},
+  });
   return (
     <>
       <img
-        src={dataDetail.sprites?.other["official-artwork"].front_default}
-        alt={dataDetail.name}
+        src={dataDetailPokemon.sprites?.other["official-artwork"].front_default}
+        alt={dataDetailPokemon.name}
       />
-      <div>Name = {dataDetail.name}</div>
+      <div>Name = {dataDetailPokemon.name}</div>
       {/* kenapa dikasih ?, karena ada kemungkinan dataDetail.stats bisa undefined, kalo object ga perlu dikasih ? */}
       <div>
-        {dataDetail.stats?.map?.((dataStats) => {
+        {dataDetailPokemon.stats?.map?.((dataStats) => {
           return (
             <div key={dataStats.stat.name}>
               {dataStats.stat.name} = {dataStats.base_stat}
@@ -39,7 +27,7 @@ const PokemonDetail = () => {
         })}
       </div>
       <div>
-        {dataDetail.types?.map((dataTypes) => {
+        {dataDetailPokemon.types?.map((dataTypes) => {
           return <div key={dataTypes.slot}>Type = {dataTypes.type.name}</div>;
         })}
       </div>
