@@ -14,7 +14,6 @@ const Pokemon = () => {
   function handleFilter(params) {
     setFiltering(params.target.value);
   }
-  console.log("ini data fetchpokemon", dataFetchPokemon);
 
   const filterPokemon = dataFetchPokemon?.filter((dataPokemon) => {
     return dataPokemon.name.includes(filtering);
