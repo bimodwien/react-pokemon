@@ -19,7 +19,7 @@ const useFetch = (parameter) => {
 
   useEffect(() => {
     fetchPokemon();
-  }, [url, dependencyArray]);
+  }, [url, ...dependencyArray]);
 
   return resultData;
 };
@@ -43,7 +43,7 @@ const useFetchDetail = (parameter) => {
 
   useEffect(() => {
     fetchDataDetails();
-  }, [url, dependencyArray]);
+  }, [url, ...dependencyArray]);
 
   return dataDetail;
 };

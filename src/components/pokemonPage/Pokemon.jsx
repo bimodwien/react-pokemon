@@ -35,6 +35,8 @@ const Pokemon = () => {
           </div>
         );
       })}
+      <button>previous</button>
+      <button>next</button>
     </>
   );
 };
