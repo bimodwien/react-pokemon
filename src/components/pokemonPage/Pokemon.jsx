@@ -5,9 +5,10 @@ import "./style.css";
 
 const Pokemon = () => {
   const [filtering, setFiltering] = useState("");
+  const [page, setPage] = useState(0);
 
   const dataFetchPokemon = useFetch({
-    url: `https://pokeapi.co/api/v2/pokemon`,
+    url: `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${page * 20}`,
     defaultData: [],
   });
 
@@ -35,8 +36,8 @@ const Pokemon = () => {
           </div>
         );
       })}
-      <button>previous</button>
-      <button>next</button>
+      <button onClick={() => setPage(page - 1)}>previous</button>
+      <button onClick={() => setPage(page + 1)}>next</button>
     </>
   );
 };
