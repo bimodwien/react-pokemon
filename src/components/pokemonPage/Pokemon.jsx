@@ -14,7 +14,26 @@ const Pokemon = () => {
 
   function handleFilter(params) {
     setFiltering(params.target.value);
+    console.log('ini filetring',filtering);
   }
+
+  function handlePrevious(){
+    setPage(page - 1)
+  }
+
+  function handleNext() {
+    setPage(page + 1)
+  }
+
+  // function handleNavigate(parameter){
+  //   setPage(parameter)
+  // }
+
+  // function handleNavigate2(params) {
+  //   return () => {
+  //     setPage(params)
+  //   }
+  // }
 
   const filterPokemon = dataFetchPokemon?.filter((dataPokemon) => {
     return dataPokemon.name.includes(filtering);
@@ -36,8 +55,20 @@ const Pokemon = () => {
           </div>
         );
       })}
-      <button onClick={() => setPage(page - 1)}>previous</button>
-      <button onClick={() => setPage(page + 1)}>next</button>
+      <button onClick={handlePrevious}>previous</button>
+      <button onClick={handleNext}>next</button>
+
+      {/* <br />
+
+      ini buat ngehandle navigate dengan input yang berbeda
+      <button onClick={() => {handleNavigate(page-1)}}>previous</button>
+      <button onClick={() => {handleNavigate(page+1)}}>next</button>
+
+      <br />
+
+      ini hampir sama kayak yang diatas
+      <button onClick={handleNavigate2(page-1)}>previous</button>
+      <button onClick={handleNavigate2(page+1)}>next</button> */}
     </>
   );
 };
