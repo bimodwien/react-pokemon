@@ -6,23 +6,27 @@ import "./style.css";
 const Pokemon = () => {
   const [filtering, setFiltering] = useState("");
   const [page, setPage] = useState(0);
+  const [selecting, setSelecting] = useState(0)
 
   const dataFetchPokemon = useFetch({
-    url: `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${page * 20}`,
+    url: `https://pokeapi.co/api/v2/pokemon?limit=${selecting}&offset=${page * 20}`,
     defaultData: [],
   });
 
   function handleFilter(params) {
     setFiltering(params.target.value);
-    console.log('ini filetring',filtering);
   }
 
-  function handlePrevious(){
-    setPage(page - 1)
+  function handlePrevious() {
+    setPage(page - 1);
   }
 
   function handleNext() {
-    setPage(page + 1)
+    setPage(page + 1);
+  }
+
+  function handleSelect(params) {
+    setSelecting(params.target.value);
   }
 
   // function handleNavigate(parameter){
@@ -44,6 +48,16 @@ const Pokemon = () => {
       <div>Pokemon</div>
       <input type="text" onChange={handleFilter} />
       <br />
+      <select onChange={handleSelect} defaultValue={""}>
+        <option value="" disabled>
+          Select
+        </option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </select>
+      <br />
       hasil :{" "}
       {filterPokemon.map((mapPokemon) => {
         return (
@@ -57,7 +71,6 @@ const Pokemon = () => {
       })}
       <button onClick={handlePrevious}>previous</button>
       <button onClick={handleNext}>next</button>
-
       {/* <br />
 
       ini buat ngehandle navigate dengan input yang berbeda
