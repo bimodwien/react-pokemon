@@ -6,10 +6,10 @@ import "./style.css";
 const Pokemon = () => {
   const [filtering, setFiltering] = useState("");
   const [page, setPage] = useState(0);
-  const [selecting, setSelecting] = useState(0)
+  const [select, setSelect] = useState(0)
 
   const dataFetchPokemon = useFetch({
-    url: `https://pokeapi.co/api/v2/pokemon?limit=${selecting}&offset=${page * 20}`,
+    url: `https://pokeapi.co/api/v2/pokemon?limit=${select}&offset=${page * 20}`,
     defaultData: [],
   });
 
@@ -26,7 +26,7 @@ const Pokemon = () => {
   }
 
   function handleSelect(params) {
-    setSelecting(params.target.value);
+    setSelect(params.target.value);
   }
 
   // function handleNavigate(parameter){
