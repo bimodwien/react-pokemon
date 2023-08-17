@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import { useFetch } from "../../helper/hooks/index";
-
 import Content from "../../components/content";
 import Filter from "../../components/filter";
 import Pagination from "../../components/pagination";
 import Select from "../../components/select";
-
 
 import "./style.css";
 
@@ -57,12 +55,12 @@ const Pokemon = () => {
   return (
     <>
       <div>Pokemon</div>
-      <Filter handleFilter = {handleFilter}/>
+      <Filter handleFilter={handleFilter} />
       <br />
-      <Select handleSelect = {handleSelect}/>
+      <Select handleSelect={handleSelect} />
       <br />
-      <Content listPokemon = {filterPokemon}/>
-      <Pagination handlePrevious = {handlePrevious} handleNext = {handleNext}/>
+      <Content listPokemon={filterPokemon} />
+      <Pagination handlePrevious={handlePrevious} handleNext={handleNext} />
       {/* <br />
 
       ini buat ngehandle navigate dengan input yang berbeda
