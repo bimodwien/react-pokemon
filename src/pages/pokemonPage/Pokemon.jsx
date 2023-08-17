@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useFetch } from "../../helper/hooks/index";
 
-// import Content from "../../components/content";
-// import Filter from "../../components/filter";
-// import Pagination from "../../components/pagination";
-// import Select from "../../components/select";
+import Content from "../../components/content";
+import Filter from "../../components/filter";
+import Pagination from "../../components/pagination";
+import Select from "../../components/select";
 
 
 import "./style.css";
@@ -57,36 +57,12 @@ const Pokemon = () => {
   return (
     <>
       <div>Pokemon</div>
-      <input type="text" onChange={handleFilter} />
-      {/* <Filter/> */}
+      <Filter handleFilter = {handleFilter}/>
       <br />
-      <select onChange={handleSelect} defaultValue={""}>
-        <option value="" disabled>
-          Select
-        </option>
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-      </select>
-      {/* <Select/> */}
+      <Select handleSelect = {handleSelect}/>
       <br />
-      hasil :{" "}
-      {filterPokemon.map((mapPokemon) => {
-        return (
-          <div key={mapPokemon.name}>
-            {mapPokemon.name} .{" "}
-            <Link to={`/details/${mapPokemon.url.split("/")[6]}`}>
-              {mapPokemon.url.split("/")[6]}
-            </Link>
-          </div>
-        );
-      })}
-      {/* <Content/> */}
-      <button onClick={handlePrevious}>previous</button>
-      <button onClick={handleNext}>next</button>
-
-      {/* <Pagination/> */}
+      <Content listPokemon = {filterPokemon}/>
+      <Pagination handlePrevious = {handlePrevious} handleNext = {handleNext}/>
       {/* <br />
 
       ini buat ngehandle navigate dengan input yang berbeda

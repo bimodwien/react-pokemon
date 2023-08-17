@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom"; 
 
-const Content = () => {
+const Content = ({listPokemon}) => {
   return (
     <>
       hasil :{" "}
-      {filterPokemon.map((mapPokemon) => {
+      {listPokemon.map((mapPokemon) => {
         return (
           <div key={mapPokemon.name}>
             {mapPokemon.name} .{" "}

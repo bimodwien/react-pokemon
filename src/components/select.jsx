@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Select = () => {
+const Select = ({handleSelect}) => {
   return (
     <select onChange={handleSelect} defaultValue={""}>
     <option value="" disabled>

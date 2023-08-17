@@ -1,6 +1,6 @@
 import React from "react";
 
-const Filter = () => {
+const Filter = ({handleFilter}) => {
   return (
     <>
       <input type="text" onChange={handleFilter} />
