@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useFetch } from "../../helper/hooks/index";
+
+// import Content from "../../components/content";
+// import Filter from "../../components/filter";
+// import Pagination from "../../components/pagination";
+// import Select from "../../components/select";
+
+
 import "./style.css";
 
 const Pokemon = () => {
@@ -51,6 +58,7 @@ const Pokemon = () => {
     <>
       <div>Pokemon</div>
       <input type="text" onChange={handleFilter} />
+      {/* <Filter/> */}
       <br />
       <select onChange={handleSelect} defaultValue={""}>
         <option value="" disabled>
@@ -61,6 +69,7 @@ const Pokemon = () => {
         <option value="15">15</option>
         <option value="20">20</option>
       </select>
+      {/* <Select/> */}
       <br />
       hasil :{" "}
       {filterPokemon.map((mapPokemon) => {
@@ -73,8 +82,11 @@ const Pokemon = () => {
           </div>
         );
       })}
+      {/* <Content/> */}
       <button onClick={handlePrevious}>previous</button>
       <button onClick={handleNext}>next</button>
+
+      {/* <Pagination/> */}
       {/* <br />
 
       ini buat ngehandle navigate dengan input yang berbeda
