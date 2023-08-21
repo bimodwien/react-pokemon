@@ -10,13 +10,13 @@ const Content = ({ listPokemon }) => {
         {listPokemon.map((mapPokemon) => {
           const images = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${mapPokemon.url.split("/")[6]}.png`;
           return (
-            <div key={mapPokemon.name} className="content-detail">
-              <Link to={`/details/${mapPokemon.url.split("/")[6]}`}>
-                {mapPokemon.url.split("/")[6]}
-              </Link>
-              <img src={images} alt="" />
-              {mapPokemon.name} .{" "}
-            </div>
+            <Link to={`/details/${mapPokemon.url.split("/")[6]}`}>
+              <div key={mapPokemon.name} className="content-detail">
+                #{mapPokemon.url.split("/")[6]}
+                <img src={images} alt="" />
+                {mapPokemon.name} .{" "}
+              </div>
+            </Link>
           );
         })}
       </div>
