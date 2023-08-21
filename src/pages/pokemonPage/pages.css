@@ -49,6 +49,7 @@
     border: 1px solid ;
     font-size: 15px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .pagination-handle {
@@ -65,6 +66,7 @@
     background-color: #D9D9D9;
     font-weight: 500;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .next-button {
@@ -76,12 +78,13 @@
     background-color: #D9D9D9;
     font-weight: 500;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .content-card {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .content-detail {
@@ -89,4 +92,17 @@
     width: 271px;
     border: 1px solid black;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    background-color: white;
+    font-size: 16px;
+    box-shadow: 1px 1px grey;
+}
+
+.content-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;  
 }

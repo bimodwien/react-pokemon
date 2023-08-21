@@ -13,8 +13,11 @@ const Content = ({ listPokemon }) => {
             <Link to={`/details/${mapPokemon.url.split("/")[6]}`}>
               <div key={mapPokemon.name} className="content-detail">
                 #{mapPokemon.url.split("/")[6]}
-                <img src={images} alt="" />
-                {mapPokemon.name} .{" "}
+                <img src={images} alt="images pokemon" />
+                <div className="content-name">
+                  {mapPokemon.name}
+                </div>
+                  
               </div>
             </Link>
           );
