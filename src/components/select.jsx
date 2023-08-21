@@ -1,17 +1,22 @@
-import React from 'react'
+import React from "react";
+import '../pages/pokemonPage/pages.css'
 
-const Select = ({handleSelect}) => {
+const Select = ({ handleSelect }) => {
   return (
-    <select onChange={handleSelect} defaultValue={""}>
-    <option value="" disabled>
-      Select
-    </option>
-    <option value="5">5</option>
-    <option value="10">10</option>
-    <option value="15">15</option>
-    <option value="20">20</option>
-  </select>
-  )
-}
+    <>
+    <div className="content-select">
+      Show per: <select onChange={handleSelect} defaultValue={""} className="button-select">
+        <option value="" disabled>
+          Select
+        </option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </select>
+    </div>
+    </>
+  );
+};
 
-export default Select
+export default Select;

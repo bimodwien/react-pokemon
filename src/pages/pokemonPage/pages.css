@@ -1,0 +1,55 @@
+.header-utama {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    font-size: 40px;
+}
+
+.content-utama {
+    background-color: #F4F4F4;
+}
+
+.filter-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.filter-form {
+    width: 585px;
+    height: 55px;
+    padding-left: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: #F4F4F4;
+}
+
+.content-utama {
+    padding: 0 5rem;
+}
+
+.button-handle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-select {
+    font-size: 20px;
+}
+
+.button-select {
+    margin-left: 20px;
+    width: 181px;
+    height: 36px;
+    padding: 0 10px;
+    background-color: #D9D9D9;
+    border: 1px solid ;
+    font-size: 15px;
+    border-radius: 5px;
+}
+/* .content-card {
+    border: 1px solid black;
+} */

@@ -1,20 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
-const Content = ({listPokemon}) => {
+import "../pages/pokemonPage/pages.css";
+
+const Content = ({ listPokemon }) => {
   return (
     <>
-      hasil :{" "}
-      {listPokemon.map((mapPokemon) => {
-        return (
-          <div key={mapPokemon.name}>
-            {mapPokemon.name} .{" "}
-            <Link to={`/details/${mapPokemon.url.split("/")[6]}`}>
-              {mapPokemon.url.split("/")[6]}
-            </Link>
-          </div>
-        );
-      })}
+      <div>
+        {listPokemon.map((mapPokemon) => {
+          const images = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${mapPokemon.url.split("/")[6]}.png`;
+          return (
+            <div key={mapPokemon.name} className="content-card">
+              <Link to={`/details/${mapPokemon.url.split("/")[6]}`}>
+                {mapPokemon.url.split("/")[6]}
+              </Link>
+              <img src={images} alt="" />
+              {mapPokemon.name} .{" "}
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

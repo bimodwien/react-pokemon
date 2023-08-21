@@ -6,7 +6,7 @@ import Filter from "../../components/filter";
 import Pagination from "../../components/pagination";
 import Select from "../../components/select";
 
-import "./style.css";
+import './pages.css'
 
 const Pokemon = () => {
   const [filtering, setFiltering] = useState("");
@@ -54,13 +54,18 @@ const Pokemon = () => {
 
   return (
     <>
-      <div>Pokemon</div>
+      <div className="header-utama">Pokemon API</div>
       <Filter handleFilter={handleFilter} />
-      <br />
-      <Select handleSelect={handleSelect} />
-      <br />
-      <Content listPokemon={filterPokemon} />
-      <Pagination handlePrevious={handlePrevious} handleNext={handleNext} />
+
+      <div className="content-utama">
+        <div className="button-handle">
+          <Select handleSelect={handleSelect} />
+          <Pagination handlePrevious={handlePrevious} handleNext={handleNext} />
+        </div>
+        <Content listPokemon={filterPokemon} />
+      </div>
+      
+      
       {/* <br />
 
       ini buat ngehandle navigate dengan input yang berbeda
