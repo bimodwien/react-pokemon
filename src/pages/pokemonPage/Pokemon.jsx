@@ -62,7 +62,7 @@ const Pokemon = () => {
           <Select handleSelect={handleSelect} />
           <Pagination handlePrevious={handlePrevious} handleNext={handleNext} />
         </div>
-        <Content listPokemon={filterPokemon} />
+          <Content listPokemon={filterPokemon} />
       </div>
       
       

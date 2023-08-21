@@ -77,6 +77,16 @@
     font-weight: 500;
     font-size: 16px;
 }
-/* .content-card {
+
+.content-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content-detail {
+    height: 258px;
+    width: 271px;
     border: 1px solid black;
-} */
+    margin: 20px;
+}
