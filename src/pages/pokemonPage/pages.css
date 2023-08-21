@@ -28,7 +28,7 @@
 }
 
 .content-utama {
-    padding: 0 5rem;
+    padding: 2rem 5rem;
 }
 
 .button-handle {
@@ -55,10 +55,10 @@
 .pagination-handle {
     display: flex;
     flex-direction: row;
+    gap: 30px;
 }
 
 .previous-button {
-    margin-right: 15px;
     height: 36px;
     width: 82px;
     border: 1px solid;
@@ -70,7 +70,6 @@
 }
 
 .next-button {
-    margin-left: 15px;
     height: 36px;
     width: 82px;
     border: 1px solid;
@@ -104,5 +103,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;  
+}
+
+.link {
+    text-decoration: none;
+    color: black;
 }
