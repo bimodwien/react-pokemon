@@ -34,7 +34,7 @@ const PokemonDetail = () => {
               {dataDetailPokemon.types?.map((dataTypes) => {
                 return (
                   <div key={dataTypes.slot} className="type-details">
-                    {dataTypes.type.name}
+                    #{dataTypes.type.name}
                   </div>
                 );
               })}
