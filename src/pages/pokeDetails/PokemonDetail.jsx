@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useFetchDetail } from "../../helper/hooks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./detail.css";
 
@@ -42,7 +43,7 @@ const PokemonDetail = () => {
           </div>
         </div>
         <div className="button-to-home">
-          <Link to="/" className="link-to-home">Back To Home</Link>
+          <Link to="/" className="link-to-home"><FontAwesomeIcon icon="fa-solid fa-chevron-left" /> Back To Home</Link>
         </div>
       </div>
     </>
