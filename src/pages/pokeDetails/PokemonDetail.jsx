@@ -41,7 +41,9 @@ const PokemonDetail = () => {
             </div>
           </div>
         </div>
-        <Link to="/">back</Link>
+        <div className="button-to-home">
+          <Link to="/" className="link-to-home">Back To Home</Link>
+        </div>
       </div>
     </>
   );
