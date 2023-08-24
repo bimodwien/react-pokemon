@@ -6,7 +6,7 @@ import Filter from "../../components/filter";
 import Pagination from "../../components/pagination";
 import Select from "../../components/select";
 
-import './pages.css'
+import './pages.scss'
 
 const Pokemon = () => {
   const [filtering, setFiltering] = useState("");

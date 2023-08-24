@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../pages/pokemonPage/pages.css";
+import "../pages/pokemonPage/pages.scss";
 
 const Content = ({ listPokemon }) => {
   return (

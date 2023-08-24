@@ -1,4 +1,5 @@
 import React from "react";
+import '../pages/pokemonPage/pages.scss'
 
 const Pagination = ({handlePrevious, handleNext}) => {
   return (

@@ -2,8 +2,9 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useFetchDetail } from "../../helper/hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
-import "./detail.css";
+import "./detail.scss";
 
 const PokemonDetail = () => {
   const parameter = useParams();
@@ -26,7 +27,7 @@ const PokemonDetail = () => {
               {dataDetailPokemon.stats?.map?.((dataStats) => {
                 return (
                   <div key={dataStats.stat.name}>
-                    {dataStats.stat.name} = {dataStats.base_stat}
+                    {dataStats.stat.name} : {dataStats.base_stat}
                   </div>
                 );
               })}
@@ -43,7 +44,7 @@ const PokemonDetail = () => {
           </div>
         </div>
         <div className="button-to-home">
-          <Link to="/" className="link-to-home"><FontAwesomeIcon icon="fa-solid fa-chevron-left" /> Back To Home</Link>
+          <Link to="/" className="link-to-home"><FontAwesomeIcon icon={faChevronLeft} /> Back To Home</Link>
         </div>
       </div>
     </>

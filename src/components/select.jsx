@@ -1,5 +1,5 @@
 import React from "react";
-import '../pages/pokemonPage/pages.css'
+import '../pages/pokemonPage/pages.scss'
 
 const Select = ({ handleSelect }) => {
   return (
